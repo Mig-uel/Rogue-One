@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  private Animator anim;
-  [SerializeField] private AudioSource explosionSoundEffect;
+  public HealthBar healthBar;
 
   public float moveSpeed;
   public Rigidbody2D rb;
@@ -12,7 +11,6 @@ public class PlayerController : MonoBehaviour
   void Start()
   {
     ProcessInputs();
-    anim = GetComponent<Animator>();
   }
 
   void Update()
@@ -38,13 +36,20 @@ public class PlayerController : MonoBehaviour
     rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
   }
 
-  private void OnTriggerEnter2D(Collider2D collision)
+  // private void OnTriggerEnter2D(Collider2D collision)
+  // {
+  //   if (collision.tag == "Enemy")
+  //   {
+  //     explosionSoundEffect.Play();
+  //     Destroy(gameObject, 0.5f);
+  //     anim.Play("Explosion");
+  //   }
+  // }
+  private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.tag == "Enemy")
     {
-      explosionSoundEffect.Play();
-      Destroy(gameObject, 0.5f);
-      anim.Play("Explosion");
+      healthBar.Damage(0.002f);
     }
   }
 }
