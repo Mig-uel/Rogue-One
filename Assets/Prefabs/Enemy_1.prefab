@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 1427743177682798343}
   - component: {fileID: 1427743177682798338}
   - component: {fileID: 1994462885558937612}
-  - component: {fileID: 4843725237902101732}
   - component: {fileID: 684609563465461677}
-  - component: {fileID: 3955650919696481574}
+  - component: {fileID: 1185249454212967165}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -154,19 +153,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4843725237902101732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427743177682798342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b40f0d42cab4f46acfed42cc7519bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionSoundEffect: {fileID: 684609563465461677}
 --- !u!82 &684609563465461677
 AudioSource:
   m_ObjectHideFlags: 0
@@ -263,7 +249,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3955650919696481574
+--- !u!114 &1185249454212967165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,7 +258,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427743177682798342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fe88a41e0954536b31b80a5599e609, type: 3}
+  m_Script: {fileID: 11500000, guid: da5ab424521e74c369627ccaee0d5d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 10
+  explosionSoundEffect: {fileID: 684609563465461677}

@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 8023155756258727542}
   - component: {fileID: 8023155756258727530}
   - component: {fileID: 8023155756258727531}
-  - component: {fileID: 5319902570541727373}
   - component: {fileID: 8925003949882034655}
-  - component: {fileID: 1240868139582849609}
+  - component: {fileID: 6307679434184360369}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Enemy
@@ -154,19 +153,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &5319902570541727373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023155756258727543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b40f0d42cab4f46acfed42cc7519bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionSoundEffect: {fileID: 8925003949882034655}
 --- !u!82 &8925003949882034655
 AudioSource:
   m_ObjectHideFlags: 0
@@ -263,7 +249,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1240868139582849609
+--- !u!114 &6307679434184360369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,7 +258,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8023155756258727543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fe88a41e0954536b31b80a5599e609, type: 3}
+  m_Script: {fileID: 11500000, guid: da5ab424521e74c369627ccaee0d5d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 10
+  explosionSoundEffect: {fileID: 8925003949882034655}

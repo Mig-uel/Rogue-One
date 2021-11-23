@@ -6,13 +6,27 @@ public class Bullet : MonoBehaviour
   private float lifetime;
 
   public float speed;
+
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
     rb.velocity = transform.up * speed;
   }
+
+  void Update()
+  {
+    lifetime += Time.deltaTime;
+    if (lifetime > 4) Destroy(gameObject);
+  }
+
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    Destroy(gameObject);
+    if (collision.tag == "Enemy")
+      Destroy(gameObject);
+  }
+
+  private void ResetLifetime()
+  {
+    lifetime = 0;
   }
 }
