@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
   public Rigidbody2D rb;
   private Vector2 moveDirection;
 
+  public Transform shootingPoint;
+  public GameObject bulletPrefab;
+
   void Start()
   {
     ProcessInputs();
@@ -15,6 +18,10 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
+    if (Input.GetKeyDown("space"))
+    {
+      Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+    }
     ProcessInputs();
   }
 

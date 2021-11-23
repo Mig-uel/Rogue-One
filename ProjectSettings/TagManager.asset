@@ -7,6 +7,7 @@ TagManager:
   - Bound
   - Enemy
   - Pause Menu
+  - Bullet
   layers:
   - Default
   - TransparentFX
