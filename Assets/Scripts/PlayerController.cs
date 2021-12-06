@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
   public HealthBar healthBar;
+  public int score = 0;
 
   public float moveSpeed;
   public Rigidbody2D rb;
@@ -59,4 +61,11 @@ public class PlayerController : MonoBehaviour
       healthBar.Damage(0.002f);
     }
   }
+  // private void endGame()
+  // {
+  //   if (Health.totalHealth <= 0)
+  //   {
+  //     SceneManagement.LoadScene("End Scene");
+  //   }
+  // }
 }
