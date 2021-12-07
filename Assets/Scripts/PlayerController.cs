@@ -13,9 +13,13 @@ public class PlayerController : MonoBehaviour
   public Transform shootingPoint;
   public GameObject bulletPrefab;
 
+  private Score score1;
+
   void Start()
   {
     ProcessInputs();
+
+    score1 = GameObject.FindWithTag("GameManager").GetComponent<Score>();
   }
 
   void Update()
@@ -45,27 +49,31 @@ public class PlayerController : MonoBehaviour
     rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
   }
 
-  // private void OnTriggerEnter2D(Collider2D collision)
-  // {
-  //   if (collision.tag == "Enemy")
-  //   {
-  //     explosionSoundEffect.Play();
-  //     Destroy(gameObject, 0.5f);
-  //     anim.Play("Explosion");
-  //   }
-  // }
+  private void OnTriggerEnter2D(Collider2D collision)
+  {
+    if (collision.tag == "Enemy-1" || collision.tag == "Enemy-2" || collision.tag == "Enemy-3")
+    {
+      score1.subScore();
+    }
+  }
   private void OnTriggerStay2D(Collider2D collision)
   {
-    if (collision.tag == "Enemy")
+    if (collision.tag == "Enemy-1")
+    {
+      healthBar.Damage(0.004f);
+    }
+    else if (collision.tag == "Enemy-2")
+    {
+      healthBar.Damage(0.006f);
+    }
+    else if (collision.tag == "Enemy-3")
     {
       healthBar.Damage(0.002f);
     }
+
+    if (Health.totalHealth <= 0)
+    {
+      SceneManager.LoadScene(4);
+    }
   }
-  // private void endGame()
-  // {
-  //   if (Health.totalHealth <= 0)
-  //   {
-  //     SceneManagement.LoadScene("End Scene");
-  //   }
-  // }
 }

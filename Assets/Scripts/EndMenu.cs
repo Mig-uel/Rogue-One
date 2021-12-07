@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class EndMenu : MonoBehaviour
 {
-  public void Quit()
+  public void home()
   {
-    Application.Quit();
+    SceneManager.LoadScene(0);
   }
 }

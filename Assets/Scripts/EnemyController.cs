@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
-  [SerializeField] float speed;
+  public float speed;
   private float lifetime;
 
   private Animator anim;
@@ -21,13 +21,20 @@ public class EnemyController : MonoBehaviour
 
     lifetime += Time.deltaTime;
     // if (lifetime > 4) gameObject.SetActive(false);
-    if (lifetime > 4) Destroy(gameObject);
+    if (lifetime > 10) Destroy(gameObject);
 
   }
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    if (collision.tag == "Player" || collision.tag == "Bullet")
+    if (collision.tag == "Bullet")
+    {
+
+      explosionSoundEffect.Play();
+      Destroy(gameObject, 0.5f);
+      anim.Play("Explosion");
+    }
+    else if (collision.tag == "Player")
     {
       explosionSoundEffect.Play();
       Destroy(gameObject, 0.5f);

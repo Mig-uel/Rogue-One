@@ -5,9 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bound
-  - Enemy
   - Pause Menu
   - Bullet
+  - GameManager
+  - Enemy-1
+  - Enemy-2
+  - Enemy-3
+  - Enemy
   layers:
   - Default
   - TransparentFX
