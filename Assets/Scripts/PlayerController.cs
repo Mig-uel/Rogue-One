@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
     {
       Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
     }
+    if (Input.GetKeyDown("r"))
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     ProcessInputs();
   }
 

@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
   public static bool GameIsPaused = false;
+  public static bool ShowingInstructions = false;
   public GameObject pauseMenuUI;
+  public GameObject instructionsUI;
 
   void Update()
   {
@@ -23,6 +25,7 @@ public class PauseMenu : MonoBehaviour
   public void Resume()
   {
     pauseMenuUI.SetActive(false);
+    instructionsUI.SetActive(false);
     Time.timeScale = 1f;
     GameIsPaused = false;
   }
@@ -40,5 +43,11 @@ public class PauseMenu : MonoBehaviour
   public void QuitGame()
   {
     Application.Quit();
+  }
+  public void Instructions()
+  {
+    instructionsUI.SetActive(true);
+    pauseMenuUI.SetActive(false);
+    ShowingInstructions = true;
   }
 }
