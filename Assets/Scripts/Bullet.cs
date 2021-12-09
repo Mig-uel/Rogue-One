@@ -6,7 +6,10 @@ public class Bullet : MonoBehaviour
   private Rigidbody2D rb;
   private float lifetime;
 
-  public Score score2;
+  public EnemyController enemy;
+  public EnemyController enemy1;
+  public EnemyController enemy2;
+  public EnemyController enemy3;
 
   public float speed;
 
@@ -15,7 +18,8 @@ public class Bullet : MonoBehaviour
     rb = GetComponent<Rigidbody2D>();
     rb.velocity = transform.up * speed;
 
-    score2 = GameObject.FindWithTag("GameManager").GetComponent<Score>();
+    enemy = GameObject.FindWithTag("Enemy-1").GetComponent<EnemyController>();
+
   }
 
   void Update()
@@ -28,19 +32,20 @@ public class Bullet : MonoBehaviour
   {
     if (collision.tag == "Enemy-1")
     {
-      Destroy(gameObject);
-      score2.addScore(10);
+      enemy = GameObject.FindWithTag("Enemy-1").GetComponent<EnemyController>();
+      enemy.TakeHit(1.5f);
     }
     else if (collision.tag == "Enemy-2")
     {
-      Destroy(gameObject);
-      score2.addScore(25);
+      enemy = GameObject.FindWithTag("Enemy-2").GetComponent<EnemyController>();
+      enemy.TakeHit(1f);
     }
     else if (collision.tag == "Enemy-3")
     {
-      Destroy(gameObject);
-      score2.addScore(5);
+      enemy = GameObject.FindWithTag("Enemy-3").GetComponent<EnemyController>();
+      enemy.TakeHit(2.5f);
     }
+    Destroy(gameObject);
   }
 
   private void ResetLifetime()

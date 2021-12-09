@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
   public Transform shootingPoint;
   public GameObject bulletPrefab;
 
-  private Score score1;
+  // private Score score1;
 
   void Start()
   {
     ProcessInputs();
 
-    score1 = GameObject.FindWithTag("GameManager").GetComponent<Score>();
+    // score1 = GameObject.FindWithTag("GameManager").GetComponent<Score>();
   }
 
   void Update()
@@ -53,13 +53,14 @@ public class PlayerController : MonoBehaviour
     rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
   }
 
-  private void OnTriggerEnter2D(Collider2D collision)
-  {
-    if (collision.tag == "Enemy-1" || collision.tag == "Enemy-2" || collision.tag == "Enemy-3")
-    {
-      score1.subScore();
-    }
-  }
+  // private void OnTriggerEnter2D(Collider2D collision)
+  // {
+  //   if (collision.tag == "Enemy-1" || collision.tag == "Enemy-2" || collision.tag == "Enemy-3")
+  //   {
+  //     score1.subScore();
+  //   }
+  // }
+
   private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.tag == "Enemy-1")
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     if (Health.totalHealth <= 0)
     {
-      SceneManager.LoadScene(4);
+      SceneManager.LoadScene(3);
     }
   }
 }

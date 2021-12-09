@@ -12,10 +12,15 @@ public class Score : MonoBehaviour
   {
     score += num;
     scoreText.text = "Score: " + score;
+    if (score >= 100) SceneManager.LoadScene(7);
   }
-  public void subScore()
+  public void subScore(int num)
   {
-    score -= 5;
-    scoreText.text = "Score: " + score;
+    if (score > 0)
+    {
+      score -= num;
+      scoreText.text = "Score: " + score;
+    }
+    if (score == 100) SceneManager.LoadScene(7);
   }
 }

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1427743177682798342}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 12.08, y: -0.18, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0012507364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.16}
+  m_Size: {x: 0.34751666, y: 0.1775106}
   m_EdgeRadius: 0
 --- !u!50 &1994462885558937612
 Rigidbody2D:
@@ -261,5 +261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5ab424521e74c369627ccaee0d5d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score2: {fileID: 0}
   speed: 15
+  HitPoints: 0
+  MaxHitPoints: 5
   explosionSoundEffect: {fileID: 684609563465461677}
